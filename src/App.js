@@ -6,6 +6,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div className="drag-n-drop">
+
+          {/* GROUP 1 */}
           <div className="dnd-group">
             <div className="dnd-item">
               <div>
@@ -25,6 +27,34 @@ function App() {
               </div>
             </div>
           </div>
+
+          {/* GROUP 2 */}
+          <div className="dnd-group">
+            <div className="dnd-item">
+              <div>
+                <p>ITEM 10</p>
+              </div>
+            </div>
+
+            <div className="dnd-item">
+              <div>
+                <p>ITEM 20</p>
+              </div>
+            </div>
+
+            <div className="dnd-item">
+              <div>
+                <p>ITEM 30</p>
+              </div>
+            </div>
+          </div>
+
+          {/* GROUP 3 */}
+          <div className="dnd-group">
+
+
+          </div>
+
         </div>
       </header>
     </div>
