@@ -1,9 +1,11 @@
 import React from 'react';
 import './App.css';
 
+import DragNDrop from './components/DragNDrop'
+
 const data = [
-  {title: 'group 1', items: ['1', '2', '3']},
-  {title: 'group 2', items: ['4', '5']}
+  {title: 'Group 1', items: ['1', '2', '3']},
+  {title: 'Group 2', items: ['4', '5']}
 ]
 
 function App() {
@@ -14,15 +16,16 @@ function App() {
         <div className="drag-n-drop">
           {data.map((grp, grpI) => (
             <div key={grp.title} className="dnd-group">
+              <div className="group-title">{grp.title}</div>
               {grp.items.map((item, itemI) => (
-                <div className="dnd-item">
+                <div draggable key={item} className="dnd-item">
                   <p>{item}</p>
                 </div>
               ))}
             </div>
           ))}
         </div>
-        
+
       </header>
     </div>
   );
