@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 
 function DragNDrop({ data }) {
+    const [ list, setList ] = useState(data);
+    const dragItem = useRef();
+
+    const handleDragStart = (e, params) => {
+        console.log('Drag Started...', params);
+        dragItem.current = params;
+    }
+
     return (
         <div className="drag-n-drop">
-            {data.map((grp, grpI) => (
+            {list.map((grp, grpI) => (
                 <div key={grp.title} className="dnd-group">
                     <div className="group-title">{grp.title}</div>
                         {grp.items.map((item, itemI) => (
-                            <div draggable key={item} className="dnd-item">
-                                <p>{item}</p>
+                            <div
+                                className="dnd-item"
+                                draggable 
+                                key={item} 
+                                onDragStart={(e) => {handleDragStart(e, {grpI, itemI})}}>
+                                    <p>{item}</p>
                             </div>
                         ))}
                 </div>
