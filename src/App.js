@@ -10,9 +10,31 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className="drag-n-drop">
 
-          {/* GROUP 1 */}
+        <div className="drag-n-drop">
+          {data.map((grp, grpI) => (
+            <div key={grp.title} className="dnd-group">
+              {grp.items.map((item, itemI) => (
+                <div className="dnd-item">
+                  <p>{item}</p>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+        
+      </header>
+    </div>
+  );
+}
+
+export default App;
+
+
+
+
+
+          {/* GROUP 1
           <div className="dnd-group">
             <div className="dnd-item">
               <div>
@@ -33,7 +55,7 @@ function App() {
             </div>
           </div>
 
-          {/* GROUP 2 */}
+          GROUP 2
           <div className="dnd-group">
             <div className="dnd-item">
               <div>
@@ -54,16 +76,9 @@ function App() {
             </div>
           </div>
 
-          {/* GROUP 3 */}
+          GROUP 3
           <div className="dnd-group">
 
+          </div> */}
 
-          </div>
 
-        </div>
-      </header>
-    </div>
-  );
-}
-
-export default App;
