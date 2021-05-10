@@ -11,12 +11,18 @@ function DragNDrop({ data }) {
         console.log('Drag Started...', params);
         dragItem.current = params;
         dragNode.current = e.target;
-        dragNode.current.addEventListener('dragend', handleDragEnd)
-        setDragging(true);
+        dragNode.current.addEventListener('dragend', handleDragEnd);
+        setTimeout(() => {
+            setDragging(true)
+        }, 0)
     }
 
     const handleDragEnd = () => {
-        console.log('Ending drag...')
+        console.log('Ending drag...');
+        setDragging(false);
+        dragNode.current.removeEventListener('dragend', handleDragEnd);
+        dragItem.current = null;
+        dragNode.current = null;
     }
 
     const getStyles = (params) => {
