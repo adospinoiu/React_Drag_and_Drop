@@ -5,11 +5,18 @@ function DragNDrop({ data }) {
     const [ dragging, setDragging ] = useState(false);
 
     const dragItem = useRef();
+    const dragNode = useRef();
 
     const handleDragStart = (e, params) => {
         console.log('Drag Started...', params);
         dragItem.current = params;
+        dragNode.current = e.target;
+        dragNode.current.addEventListener('dragend', handleDragEnd)
         setDragging(true);
+    }
+
+    const handleDragEnd = () => {
+        console.log('Ending drag...')
     }
 
     const getStyles = (params) => {
