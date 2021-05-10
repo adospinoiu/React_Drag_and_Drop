@@ -2,11 +2,22 @@ import React, { useState, useRef } from 'react';
 
 function DragNDrop({ data }) {
     const [ list, setList ] = useState(data);
+    const [ dragging, setDragging ] = useState(false);
+
     const dragItem = useRef();
 
     const handleDragStart = (e, params) => {
         console.log('Drag Started...', params);
         dragItem.current = params;
+        setDragging(true);
+    }
+
+    const getStyles = (params) => {
+        const currentItem = dragItem.current;
+        if (currentItem.grpI === params.grpI && currentItem.itemI === params.itemI) {
+            return 'current dnd-item'
+        }
+        return 'dnd-item'
     }
 
     return (
@@ -16,7 +27,7 @@ function DragNDrop({ data }) {
                     <div className="group-title">{grp.title}</div>
                         {grp.items.map((item, itemI) => (
                             <div
-                                className="dnd-item"
+                                className={dragging?getStyles({grpI, itemI}):"dnd-item"}
                                 draggable 
                                 key={item} 
                                 onDragStart={(e) => {handleDragStart(e, {grpI, itemI})}}>
