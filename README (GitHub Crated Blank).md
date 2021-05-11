@@ -13,3 +13,5 @@ Background: While working on the Reading-List-App I realized I needed drag-and-d
 #4 Now that the required <div> is 'draggable' need to work with State in order to update the information as the div moves locations.
 
 #5 Information captured using useState and useRef to capture while <div> is being dragged, what position it is dragged to, and lastly, need to capture which position it is release on
+
+#6 Code now handles the drag and drop within the same group, but also within different groups
