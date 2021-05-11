@@ -11,3 +11,5 @@ Background: While working on the Reading-List-App I realized I needed drag-and-d
 #3 The specific item (i.e. div) that needs to be 'draggable' is what is critical. It has to be identified as 'draggable or draggable=true' in the <div> field. You also have to assign a 'key' to the div-field.
 
 #4 Now that the required <div> is 'draggable' need to work with State in order to update the information as the div moves locations.
+
+#5 Information captured using useState and useRef to capture while <div> is being dragged, what position it is dragged to, and lastly, need to capture which position it is release on

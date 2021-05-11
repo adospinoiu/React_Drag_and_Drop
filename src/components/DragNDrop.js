@@ -17,6 +17,10 @@ function DragNDrop({ data }) {
         }, 0)
     }
 
+    const handleDragEnter = (e, params) => {
+        console.log('Entering drag...', params)
+    }
+
     const handleDragEnd = () => {
         console.log('Ending drag...');
         setDragging(false);
@@ -43,8 +47,10 @@ function DragNDrop({ data }) {
                                 className={dragging?getStyles({grpI, itemI}):"dnd-item"}
                                 draggable 
                                 key={item} 
-                                onDragStart={(e) => {handleDragStart(e, {grpI, itemI})}}>
-                                    <p>{item}</p>
+                                onDragStart={(e) => {handleDragStart(e, {grpI, itemI})}}
+                                onDragEnter={dragging?(e) => {handleDragEnter(e, {grpI, itemI})}:null}
+                            >
+                                <p>{item}</p>
                             </div>
                         ))}
                 </div>
