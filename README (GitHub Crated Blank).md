@@ -15,3 +15,5 @@ Background: While working on the Reading-List-App I realized I needed drag-and-d
 #5 Information captured using useState and useRef to capture while <div> is being dragged, what position it is dragged to, and lastly, need to capture which position it is release on
 
 #6 Code now handles the drag and drop within the same group, but also within different groups
+
+#7 Code is now complete. Need alot more practice and understanding.
