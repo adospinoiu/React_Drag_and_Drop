@@ -17,3 +17,7 @@ Background: While working on the Reading-List-App I realized I needed drag-and-d
 #6 Code now handles the drag and drop within the same group, but also within different groups
 
 #7 Code is now complete. Need alot more practice and understanding.
+
+#8 The first try is with the simple react-dnd code. Next, going to try with the react-beautiful-dnd package
+
+#9 Installed react-beautiful-dnd package
