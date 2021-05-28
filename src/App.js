@@ -11,6 +11,7 @@ import React from 'react';
 
 // ###### Moving Data from Child to Parent ######
 import './Parent.css'; 
+import Child from 
 
 function App() {
   return (
