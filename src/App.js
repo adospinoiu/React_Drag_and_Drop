@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // ###### Drag-N-Drop CODE ######
 // import './App.css';
@@ -11,9 +11,11 @@ import React from 'react';
 
 // ###### Moving Data from Child to Parent ######
 import './Parent.css'; 
-import Child from 
+import Child from './Child.js'
 
 function App() {
+const [ word, setWord ] = useState('Parent');
+
   return (
     // ###### Drag-N-Drop CODE ######
     // <div className="App">
@@ -24,7 +26,10 @@ function App() {
     // ##############################
 
     <div className="parent">
-        <h1>Parent</h1>
+        <h1>{word}</h1>
+
+        <Child 
+          changeWord={word => setWord(word)}/>
     </div>
   )
 }

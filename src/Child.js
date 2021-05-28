@@ -1,12 +1,16 @@
-import React from 'react'
+import React from 'react';
+import './Child.css';
 
-function Child() {
+function Child(props) {
     return (
         <div className="child">
             <h1>Child</h1>
-            <button>Click to Change SOMETHING</button>
+            <button
+                onClick={() => props.changeWord('Alex')}>
+                Click to Change SOMETHING
+            </button>
         </div>
     )
 }
 
-export default Child
+export default Child;
